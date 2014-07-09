@@ -23,6 +23,16 @@ Or install it yourself as:
 
 First, set your AppAnnie API key. You can do this via the `APPANNIE_API_KEY` environment variable, or by setting `AppAnnie.api_key`
 
+Example
+	@rawResponse = AppAnnie::App.new({ 
+		'account_id' => @account_id,
+		'app_id' => @app_id 
+	}).sales({
+		'break_down' => "dates",
+		'start_date' => "2014-1-1",
+		'end_date' => "2014-6-1"
+	})
+
 ## Contributing
 
 1. Fork it
