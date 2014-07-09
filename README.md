@@ -9,21 +9,18 @@ Simple Ruby wrapper for [App Annie's](http://www.appannie.com/) [analytics API](
 
 Add this line to your application's Gemfile:
 
-    gem 'app_annie'
+    gem 'app_annie', :git => 'git@github.com:moneytree-doug/app_annie.git'
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install app_annie
+    $ bundle install
 
 ## Usage
 
 First, set your AppAnnie API key. You can do this via the `APPANNIE_API_KEY` environment variable, or by setting `AppAnnie.api_key`
 
-Example
+Example,
+
 	@rawResponse = AppAnnie::App.new({ 
 		'account_id' => @account_id,
 		'app_id' => @app_id 
