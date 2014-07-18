@@ -9,26 +9,26 @@ Simple Ruby wrapper for [App Annie's](http://www.appannie.com/) [analytics API](
 
 Add this line to your application's Gemfile:
 
-    gem 'app_annie', github: 'modeset/app_annie'
+    gem 'app_annie', :git => 'git@github.com:moneytree-doug/app_annie.git'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 ## Usage
 
 First, set your AppAnnie API key. You can do this via the `APPANNIE_API_KEY` environment variable, or by setting `AppAnnie.api_key`
 
-### Intelligence API
+Example,
 
-(after setting your api key)
-```ruby
-AppAnnie::Intelligence.top_app_charts(options)
-```
-
-* required options: `market`, `device`, and `categories`
-* default options: `vertical: 'apps'`, `countries: 'US'`
-* all other options get passed as query params. See Intelligence API docs
+	@rawResponse = AppAnnie::App.new({ 
+		'account_id' => @account_id,
+		'app_id' => @app_id 
+	}).sales({
+		'break_down' => "dates",
+		'start_date' => "2014-1-1",
+		'end_date' => "2014-6-1"
+	})
 
 ## Contributing
 
